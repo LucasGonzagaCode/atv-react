@@ -1,0 +1,61 @@
+
+*{
+    background-color: rgb(31, 30, 30);
+}
+.main{
+   
+    height: 100%;
+}
+h1{
+    margin-top: 5%;
+    color: aliceblue;
+    text-align: left;
+    border-left: solid 2px rgb(143, 11, 11) ;
+}
+.filmes{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.filmes img{
+    margin-left: 15%;
+}
+.series{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.series img{
+    margin-left: 15%;
+}
+.icons{
+    margin-top: 5%;
+    color: gray;
+    font-size: 30px;
+}
+.info{
+    margin-top: 5%;
+    display: flex;
+}
+.info .p1{
+    margin-right: 5%;
+}
+.info .p2{
+    text-align: center;
+    background-color: rgb(143, 11, 11);
+    border-radius: 5%;
+    height:25px;
+    width: 100px;
+}
+.title{
+    display: inline-flex;
+    justify-content: space-around;
+    margin: auto;
+    width: 100%;
+}
+.icons .ic1 :hover{
+    color: rgb(143, 11, 11);
+}
+.icons .ic2 :hover{
+    color: rgb(143, 11, 11);
+}

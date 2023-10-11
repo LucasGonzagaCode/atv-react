@@ -1,0 +1,11 @@
+header{
+    display: flex;
+    height: 100px;
+    background-color: black;
+    }
+    h3{
+        background-color: black;
+        margin-left:50%;
+        color: rgb(143, 11, 11);
+        font-size: 30px;
+    }

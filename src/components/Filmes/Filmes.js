@@ -6,11 +6,18 @@ const Filmes = ({ListsF}) =>{
     {ListsF.map((ListF) =>
     <>
     <div className="film">
-        <img src={ListF.img} alt={ListF.nome}/>
+    {/* <div className="des">
+        <p className="">Destaque</p>
+    </div> */}
+    <div>
+         <img src={ListF.img} alt={ListF.nome}/>
+        
         <p>{ListF.nome}</p>
         <p className="descricao">{ListF.descricao}</p>
         
     </div>
+    </div>
+       
         
         
         </>

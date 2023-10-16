@@ -1,6 +1,6 @@
 img{
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
 
 }
 img:hover{
@@ -12,3 +12,21 @@ p{
 .descricao{
     color: gray;
 }
+.film{
+    display: flex;
+}
+/* .des{
+    width: 8%;
+    height: 20px;
+    margin-left: 30px;
+    border-bottom-right-radius: 10px;
+    background-color: red !important;
+    color: aliceblue;
+    bottom: 85%;
+    position:absolute;
+} */
+
+/* .des {
+    background-color: none;
+    margin: 0;
+} */

@@ -1,25 +1,32 @@
 
 *{
-    background-color: rgb(31, 30, 30);
+ background-color: rgb(31, 30, 30);
 }
 .main{
-   
     height: 100%;
 }
 h1{
     margin-top: 5%;
     color: aliceblue;
     text-align: left;
+    padding-left:10px ;
     border-left: solid 2px rgb(143, 11, 11) ;
+}
+
+.carousel{
+    cursor: grab;
 }
 .filmes{
     display: flex;
     justify-content: center;
     margin-bottom: 5%;
+    padding: 14px;
 }
 .filmes img{
     margin-left: 15%;
+    pointer-events: none;
 }
+
 .series{
     display: flex;
     justify-content: center;
@@ -35,6 +42,7 @@ h1{
 }
 .info{
     margin-top: 5%;
+    margin-left: 80%;
     display: flex;
 }
 .info .p1{
@@ -49,7 +57,6 @@ h1{
 }
 .title{
     display: inline-flex;
-    justify-content: space-around;
     margin: auto;
     width: 100%;
 }
@@ -59,3 +66,14 @@ h1{
 .icons .ic2 :hover{
     color: rgb(143, 11, 11);
 }
+
+/* .destaque{
+    width: 8%;
+    height: 20px;
+    margin-left: 30px;
+    border-bottom-right-radius: 10px;
+    background-color: red !important;
+    color: aliceblue;
+    bottom: 85%;
+    position: absolute;
+} */

@@ -1,4 +1,6 @@
 //Imports
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import Filmes from "../Filmes/Filmes";
 import Series from "../Series/Series";
 import "./main.css";
@@ -24,7 +26,21 @@ import Tlou from "../../img/Tlou.png";
 //
 
 const Main = () => {
+  const carousel = useRef();
+  const [width, setWidth] = useState(0);
+
+  useEffect(() => {
+    console.log(carousel.current?.scrollWidth, carousel.current?.offsetWidth);
+    setWidth(carousel.current?.scrollWidth - carousel.current?.offsetWidth);
+  }, []);
+
   const ListF = [
+    { nome: "Karate Kid", descricao: "2010", img: KarateKid },
+    { nome: "Ilha do Medo", descricao: "2013", img: IlhaDoMedo },
+    { nome: "Gente Grande", descricao: "2012", img: GenteGrande },
+    { nome: "Karate Kid", descricao: "2010", img: KarateKid },
+    { nome: "Ilha do Medo", descricao: "2013", img: IlhaDoMedo },
+    { nome: "Gente Grande", descricao: "2012", img: GenteGrande },
     { nome: "Karate Kid", descricao: "2010", img: KarateKid },
     { nome: "Ilha do Medo", descricao: "2013", img: IlhaDoMedo },
     { nome: "Gente Grande", descricao: "2012", img: GenteGrande },
@@ -35,39 +51,66 @@ const Main = () => {
     { nome: "Supernatural", descricao: "2010", img: Supernatural },
     { nome: "The Office", descricao: "2010", img: TheOffice },
     { nome: "The Last Of Us", descricao: "2023", img: Tlou },
+    { nome: "Supernatural", descricao: "2010", img: Supernatural },
+    { nome: "The Office", descricao: "2010", img: TheOffice },
+    { nome: "The Last Of Us", descricao: "2023", img: Tlou },
+    { nome: "Supernatural", descricao: "2010", img: Supernatural },
+    { nome: "The Office", descricao: "2010", img: TheOffice },
+    { nome: "The Last Of Us", descricao: "2023", img: Tlou },
   ];
   return (
     <>
-    <div className="main">
-
-    <div className="title">
-        <h1>Filmes</h1>
-        <div className="icons">
-          <GoChevronLeft className="ic1"/>
-          <GoChevronRight className="ic2" />
+      <div className="main">
+        <div className="title">
+          <h1>Filmes</h1>
+          {/* <div className="icons">
+            <GoChevronLeft className="ic1" />
+            <GoChevronRight className="ic2" />
+          </div> */}
         </div>
-      </div>
+        <motion.div
+          ref={carousel}
+          className="carousel"
+          whileTap={{ cursor: "grabbing" }}
+        >
+          <motion.div
+            className="filmes"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+          >
+            <Filmes ListsF={ListF} />
+          </motion.div>
+        </motion.div>
 
-      <div className="filmes">
-        <Filmes ListsF={ListF} />
-      </div>
-
-      <div className="title">
-        <h1>Séries</h1>
-        <div className="info">
-        <p className="p1">1,430 </p>
-        <p className="p2">Ver todos</p>
+        <div className="title">
+          <h1>Séries</h1>
+          <div className="info">
+            <p className="p1">1,430 </p>
+            <p className="p2">Ver todos</p>
+          </div>
         </div>
-        
-        </div>
-      
 
-      <div className="series">
-        <Series ListsS={ListS} />
+        <motion.div
+          ref={carousel}
+          className="carousel"
+          whileTap={{ cursor: "grabbing" }}
+        >
+          <motion.div
+            className="filmes"
+            drag="x"
+            dragConstraints={{ right: 0, left: -width }}
+            initial={{ x: 100 }}
+            animate={{ x: 0 }}
+          >
+            <Series ListsS={ListS} />
+          </motion.div>
+        </motion.div>
+
+        {/* <div className="series">
+        </div> */}
       </div>
-
-    
-     </div>
     </>
   );
 };
